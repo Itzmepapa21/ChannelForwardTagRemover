@@ -22,15 +22,7 @@ START_BTN = InlineKeyboardMarkup(
     )
 
 
-@bot.on_message(filters.command(["start"]))
-async def start(bot, update):
-    text = START_TXT.format(update.from_user.mention)
-    reply_markup = START_BTN
-    await update.reply_text(
-        text=text,
-        disable_web_page_preview=True,
-        reply_markup=reply_markup
-    )
+
 
 @bot.on_message(filters.channel & filters.forwarded)
 async def fwdrmv(c, m):
